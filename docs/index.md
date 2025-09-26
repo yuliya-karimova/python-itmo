@@ -1,17 +1,11 @@
-# Welcome to my MkDocs
+# Welcome to My page
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+I'm Yuliya Karimova from ITMO.
+Сurrently working as a developer in Ozon Tech.
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+- Phone: +79817845590
+- Email: y.o.karimova@gmail.com
+- Telegram: @yulya_karimova
+- GitHub: yuliya-karimova
+- CodeWars: yuliya-karimova
+- Address: Russia, St. Petersburg
