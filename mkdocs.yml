@@ -1,5 +1,5 @@
-site_name: "Юля — DevOps & Python"
-site_description: "Учебный статический сайт: кастомная тема, сборка статики, CI/CD, валидация и минификация."
+site_name: "Юлия Каримова — DevOps & Python"
+site_description: "Проектирование и развертывание веб-решений в эко-системе Python"
 site_author: "Yuliya karimova"
 
 theme:
@@ -13,9 +13,18 @@ use_directory_urls: true
 
 markdown_extensions:
   - toc:
-      permalink: true
+      permalink: false
+      toc_depth: 2
 
 extra_css:
   - assets/css/main.css
 extra_javascript:
   - assets/js/main.js
+
+extra:
+  git_repo: https://github.com/yuliya-karimova/python-itmo
+
+nav:
+  - Обо мне: index.md
+  - Отчет: report.md
+  - Исследование: research.md
