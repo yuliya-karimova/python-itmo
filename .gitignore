@@ -1,0 +1,59 @@
+# --- ОС / редакторы ---
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.*.sw?
+.idea/
+.vscode/
+*.log
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+.build/
+.python-version
+.pytest_cache/
+.mypy_cache/
+.pytype/
+.cache/        # общая кеш-папка (в т.ч. для некоторых тулз)
+coverage.xml
+htmlcov/
+.coverage*
+.ipynb_checkpoints/
+
+# Виртуальные окружения (локальные)
+venv/
+ENV/
+env/
+.venv/
+
+# --- MkDocs ---
+site/          # сборка MkDocs (папка деплоя на Pages)
+# Если когда-то решишь публиковать из ветки gh-pages — не коммить сюда руками
+
+# --- Node / фронтенд ---
+node_modules/
+.npm/
+.npmrc.local   # если используешь локальные приватные настройки
+# lock-файлы НЕ игнорируем: package-lock.json / pnpm-lock.yaml / yarn.lock — полезны
+
+# Артефакты сборки/бандлы (на всякий, если появятся)
+dist/
+build/
+*.map
+
+# --- Env / секреты ---
+.env
+.env.*
+*.secret
+*.key
+*.pem
+
+# --- CI / прочее ---
+# Локальные артефакты от Actions/CLI (если вдруг генерятся локально)
+.github/*.local

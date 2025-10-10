@@ -1,0 +1,21 @@
+{
+  "name": "mkdocs-custom-theme",
+  "private": true,
+  "scripts": {
+    "postcss": "postcss docs/assets/css/main.css -o site/assets/css/main.css",
+    "html:validate": "html-validate \"site/**/*.html\"",
+    "html:minify": "shx mkdir -p site && html-minifier-terser --input-dir site --output-dir site --file-ext html --collapse-whitespace --remove-comments --remove-optional-tags --minify-css true --minify-js true",
+    "html:typo": "node -e \"const fs=require('fs'); const gl=require('glob'); const typogr=require('typogr'); gl.sync('site/**/*.html').forEach(f=>{const s=fs.readFileSync(f,'utf8'); fs.writeFileSync(f, typogr.typogrify(s));});\"",
+    "build": "mkdocs build -d site && npm run postcss && npm run html:validate && npm run html:typo && npm run html:minify"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "cssnano": "^6.1.2",
+    "html-minifier-terser": "^7.2.0",
+    "html-validate": "^10.1.1",
+    "postcss": "^8.4.47",
+    "postcss-cli": "^11.0.0",
+    "shx": "^0.3.4",
+    "typogr": "^0.6.8"
+  }
+}

@@ -1,1 +1,21 @@
-site_name: My Docs
+site_name: "Юля — DevOps & Python"
+site_description: "Учебный статический сайт: кастомная тема, сборка статики, CI/CD, валидация и минификация."
+site_author: "Yuliya karimova"
+
+theme:
+  name: null
+  custom_dir: theme
+  language: ru
+  features:
+    - navigation.top
+
+use_directory_urls: true
+
+markdown_extensions:
+  - toc:
+      permalink: true
+
+extra_css:
+  - assets/css/main.css
+extra_javascript:
+  - assets/js/main.js

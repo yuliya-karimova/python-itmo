@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>{{ config.site_name }}{% if page and page.title %} — {{ page.title }}{% endif %}</title>
+
+  <!-- Метаданные -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ config.site_description | e }}">
+  <meta name="author" content="{{ config.site_author | e }}">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ config.site_name }}">
+  <meta property="og:description" content="{{ config.site_description | e }}">
+  <meta property="og:type" content="website">
+
+  <!-- Стили (после сборки PostCSS перезапишем site/assets/css/main.css) -->
+  {% for path in config.extra_css %}
+    <link rel="stylesheet" href="{{ base_url }}/{{ path }}">
+  {% endfor %}
+</head>
+<body>
+  {% include "partials/header.html" %}
+
+  <main class="container">
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          {% for nav_item in nav %}
+          <li class="{% if nav_item.active %}active{% endif %}">
+            <a href="{{ nav_item.url | url }}">{{ nav_item.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </aside>
+
+    <article class="content">
+      {% if page and page.title %}<h1>{{ page.title }}</h1>{% endif %}
+      {{ page.content }}
+    </article>
+  </main>
+
+  {% include "partials/footer.html" %}
+
+  {% for path in config.extra_javascript %}
+    <script src="{{ base_url }}/{{ path }}"></script>
+  {% endfor %}
+</body>
+</html>
