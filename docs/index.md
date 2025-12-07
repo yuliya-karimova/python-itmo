@@ -1,7 +1,7 @@
 ## Обо мне
 
 I'm Yuliya Karimova from ITMO.
-Сurrently working as a developer in Ozon Tech.
+Сurrently working as a frontend developer in Ozon Tech.
 
 - Phone: +79817845590
 - Email: y.o.karimova@gmail.com

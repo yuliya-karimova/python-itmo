@@ -27,9 +27,8 @@ jobs:
       - name: Install Python deps
         run: |
           python -m pip install --upgrade pip
-          pip install mkdocs   # mkdocs-material убери, если перешёл на свою тему
+          pip install mkdocs
 
-      # 👇 ДОБАВЛЕНО: Node для PostCSS/валидации/минификации
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
@@ -41,20 +40,15 @@ jobs:
       - name: Build MkDocs (to site/)
         run: mkdocs build --strict --site-dir ./site
 
-      # 👇 ДОБАВЛЕНО: PostCSS (autoprefixer + cssnano)
       - name: PostCSS build
         run: npm run postcss
-        # ожидает scripts.postcss в package.json и источник docs/assets/css/main.css
 
-      # 👇 ДОБАВЛЕНО: Валидация HTML
+      - name: Typography
+        run: npm run html:typo
+
       - name: Validate HTML
         run: npm run html:validate
 
-      # (опционально) улучшение типографики
-      # - name: Typography
-      #   run: npm run html:typo
-
-      # 👇 ДОБАВЛЕНО: Минификация HTML
       - name: Minify HTML
         run: npm run html:minify
 
